@@ -4,6 +4,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts(x)?', '!src/**/stories.tsx'],
+  modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
   // testPathIgnorePatterns: ['/node_modules/', '/next/'],
   // moduleNameMapper: {
   //   '^styled-components':
