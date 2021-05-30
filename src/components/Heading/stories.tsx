@@ -8,6 +8,18 @@ export default {
     children: {
       type: 'string',
     },
+    size: {
+      type: 'select',
+      options: ['small', 'medium'],
+    },
+    lineColor: {
+      type: 'select',
+      options: ['primary', 'secondary'],
+    },
+    color: {
+      type: 'select',
+      options: ['white', 'black'],
+    },
   },
 } as Meta
 
