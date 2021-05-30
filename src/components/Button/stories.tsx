@@ -16,6 +16,9 @@ export default {
     icon: {
       type: '',
     },
+    as: {
+      type: 'string',
+    },
   },
 } as Meta
 
@@ -44,5 +47,15 @@ export const withIcon: Story = (args) => <Button {...args} />
 
 withIcon.args = {
   children: 'Button',
+  icon: <AddShoppingCart />,
+}
+
+export const asLink: Story = (args) => <Button {...args} />
+
+asLink.args = {
+  size: 'large',
+  children: 'Button',
+  as: 'a',
+  href: '#',
   icon: <AddShoppingCart />,
 }
