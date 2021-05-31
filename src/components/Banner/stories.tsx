@@ -10,10 +10,28 @@ export default {
     subtitle: '<p>Play the new <strong>CrashLands</strong></p> season',
     buttonLabel: 'Buy now',
     buttonLink: '/games/defy-death',
+    ribbon: 'lorem ipsum',
+  },
+  argTypes: {
+    ribbon: {
+      type: 'string',
+    },
+    ribbonSize: {
+      type: 'select',
+      options: ['small', 'normal'],
+    },
+    ribbonColor: {
+      type: 'select',
+      options: ['primary', 'secondary'],
+    },
   },
   parameters: {
     layout: 'fullscreen',
   },
 } as Meta
 
-export const Basic: Story<BannerProps> = (args) => <Banner {...args} />
+export const Basic: Story<BannerProps> = (args) => (
+  <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
+    <Banner {...args} />
+  </div>
+)
