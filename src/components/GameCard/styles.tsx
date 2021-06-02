@@ -40,6 +40,21 @@ export const ImageBox = styled.a`
   }
 `
 
+type ImageProps = {
+  src: string
+}
+
+export const Image = styled.div<ImageProps>`
+  ${({ src }) => css`
+    width: 100%;
+    min-height: 14rem;
+    background-image: url(${src});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  `}
+`
+
 export const Content = styled.div`
   ${({ theme }) => css`
     display: flex;
