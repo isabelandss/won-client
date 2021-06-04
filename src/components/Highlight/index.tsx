@@ -2,7 +2,7 @@ import * as S from './styles'
 import Button from 'components/Button'
 
 export type HighlightProps = {
-  title: React.ReactNode
+  title: string | React.ReactNode
   subtitle: React.ReactNode
   buttonLabel: string
   buttonLink: string
@@ -21,7 +21,7 @@ const Highlight = ({
   alignment = 'right',
 }: HighlightProps) => (
   <S.Wrapper backgroundImage={backgroundImage} alignment={alignment}>
-    {!!floatImage && <S.FloatImage src={floatImage} alt={title} />}
+    {!!floatImage && <S.FloatImage src={floatImage} alt={`${title}`} />}
     <S.Content>
       <S.Title>{title}</S.Title>
       <S.Subtitle>{subtitle}</S.Subtitle>
