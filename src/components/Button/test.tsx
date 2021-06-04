@@ -3,6 +3,7 @@ import { AddShoppingCart } from '@styled-icons/material-outlined'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import Button from '.'
+import theme from 'styles/theme'
 
 describe('<Button />', () => {
   test('should render a medium button by default', () => {
@@ -38,6 +39,23 @@ describe('<Button />', () => {
     expect(screen.getByRole('button', { name: /lorem ipsum/i })).toHaveStyle({
       width: '100%',
     })
+  })
+
+  test('should render a minimal button', () => {
+    renderWithTheme(
+      <Button icon={<AddShoppingCart data-testid="icon" />} minimal>
+        lorem ipsum
+      </Button>,
+    )
+
+    expect(screen.getByRole('button', { name: /lorem ipsum/i })).toHaveStyle({
+      background: 'none',
+      color: theme.colors.primary,
+    })
+
+    expect(
+      screen.getByRole('button', { name: /lorem ipsum/i }),
+    ).toHaveStyleRule('background', 'none', { modifier: ':hover' })
   })
 
   test('should render a button with icon', () => {
