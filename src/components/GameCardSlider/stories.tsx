@@ -52,6 +52,12 @@ export default {
   title: 'GameCardSlider',
   component: GameCardSlider,
   args: { items },
+  argTypes: {
+    color: {
+      type: 'select',
+      options: ['black', 'white'],
+    },
+  },
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
